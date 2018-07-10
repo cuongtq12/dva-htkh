@@ -15,12 +15,12 @@ let routes = [
     {
         "path": "/products",
         "exact": true,
-        "component": require('../routes/Products.js').default
+        "component": require('../products.js').default
     },
     {
         "component": () => React.createElement(require('C:/Users/cuongtq12/AppData/Roaming/npm/node_modules/umi/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, {
             pagesPath: 'src/pages',
-            routes: '[{"path":"/","exact":true,"component":"./src/pages/index.js"},{"path":"/routes/Products","exact":true,"component":"./src/pages/routes/Products.js"}]'
+            routes: '[{"path":"/","exact":true,"component":"./src/pages/index.js"},{"path":"/products","exact":true,"component":"./src/pages/products.js"}]'
         })
     }
 ];

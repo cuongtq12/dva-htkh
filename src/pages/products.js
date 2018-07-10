@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
-import ProductList from '../../components/ProductList';
+import ProductList from '../components/ProductList';
 
 const Products = ({dispatch, products}) => {
     const handleDelete = id => {

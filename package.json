@@ -1,0 +1,15 @@
+{
+  "name": "dva-htkh",
+  "version": "0.0.1",
+  "dependencies": {
+    "antd": "^3.6.5",
+    "babel-plugin-import": "^1.8.0",
+    "dva": "^2.3.1",
+    "dva-loading": "^2.0.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "scripts": {
+    "start": "set port=3000 && umi dev"
+  }
+}

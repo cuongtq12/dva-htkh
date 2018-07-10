@@ -13,6 +13,11 @@ let routes = [
         "component": require('../index.js').default
     },
     {
+        "path": "/login",
+        "exact": true,
+        "component": require('../login.js').default
+    },
+    {
         "path": "/products",
         "exact": true,
         "component": require('../products.js').default
@@ -20,7 +25,7 @@ let routes = [
     {
         "component": () => React.createElement(require('C:/Users/cuongtq12/AppData/Roaming/npm/node_modules/umi/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, {
             pagesPath: 'src/pages',
-            routes: '[{"path":"/","exact":true,"component":"./src/pages/index.js"},{"path":"/products","exact":true,"component":"./src/pages/products.js"}]'
+            routes: '[{"path":"/","exact":true,"component":"./src/pages/index.js"},{"path":"/login","exact":true,"component":"./src/pages/login.js"},{"path":"/products","exact":true,"component":"./src/pages/products.js"}]'
         })
     }
 ];

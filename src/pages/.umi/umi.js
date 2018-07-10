@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import createHistory from 'umi/_createHistory';
 import FastClick from 'umi-fastclick';
+import DvaContainer from "./DvaContainer";
 
 
 document.addEventListener(
@@ -20,7 +21,7 @@ window.g_history = createHistory({
 
 // render
 function render() {
-  ReactDOM.render(React.createElement(require('./router').default), document.getElementById('root'));
+  ReactDOM.render(React.createElement(require('./DvaContainer').default, null, React.createElement(require('./router').default)), document.getElementById('root'));
 }
 render();
 

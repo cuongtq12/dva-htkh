@@ -1,9 +1,11 @@
 import React from 'react';
 import {Button, Form, Input} from 'antd';
+import {connect} from 'dva';
 
 const FormItem = Form.Item;
 
 const Login = ({
+                   dispatch,
                    form: {
                        getFieldDecorator,
                        validateFieldsAndScroll,
@@ -15,11 +17,12 @@ const Login = ({
             if (errors) {
                 return;
             }
+            dispatch({type: 'login/login', payload: values});
         })
     }
 
     return (
-        <form>
+        <Form>
             <FormItem hasFeedback>
                 {getFieldDecorator('username', {
                     rules: [
@@ -28,7 +31,7 @@ const Login = ({
                         },
                     ],
                 })(
-                        <Input onPressEnter={handleOk} placeholder="Username" />
+                    <Input onPressEnter={handleOk} placeholder="Username"/>
                 )}
             </FormItem>
             <FormItem hasFeedback>
@@ -44,8 +47,8 @@ const Login = ({
             </FormItem>
 
             <Button onClick={handleOk}>Đăng nhập</Button>
-        </form>
+        </Form>
     );
 };
 
-export default Form.create()(Login);
+export default connect()(Form.create()(Login));

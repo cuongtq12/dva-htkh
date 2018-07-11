@@ -15,6 +15,7 @@ let app = dva({
 window.g_app = app;
 app.use(createLoading());
 app.model(require('../../models/products.js').default);
+app.model({ namespace: 'login', ...(require('../../models/login.js').default) });
 
 class DvaContainer extends Component {
     render() {

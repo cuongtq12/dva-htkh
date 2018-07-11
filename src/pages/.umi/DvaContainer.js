@@ -14,6 +14,7 @@ let app = dva({
 
 window.g_app = app;
 app.use(createLoading());
+app.use(require('../../plugins/onError.js').default);
 app.model(require('../../models/products.js').default);
 app.model({ namespace: 'login', ...(require('../../models/login.js').default) });
 

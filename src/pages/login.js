@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Form, Input} from 'antd';
+import {Button, Form, Input, Checkbox, Icon} from 'antd';
 import {connect} from 'dva';
 
 const FormItem = Form.Item;
@@ -12,7 +12,7 @@ const Login = ({
                    },
                }
 ) => {
-    function handleOk() {
+    function handleOk () {
         validateFieldsAndScroll((errors, values) => {
             if (errors) {
                 return;
@@ -23,7 +23,7 @@ const Login = ({
 
     return (
         <Form>
-            <FormItem hasFeedback>
+            <FormItem>
                 {getFieldDecorator('username', {
                     rules: [
                         {
@@ -31,10 +31,10 @@ const Login = ({
                         },
                     ],
                 })(
-                    <Input onPressEnter={handleOk} placeholder="Username"/>
+                    <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} onPressEnter={handleOk} placeholder="Tên tài khoản"/>
                 )}
             </FormItem>
-            <FormItem hasFeedback>
+            <FormItem>
                 {getFieldDecorator('password', {
                     rules: [
                         {
@@ -42,7 +42,16 @@ const Login = ({
                         },
                     ],
                 })(
-                    <Input placeholder={"Mật khẩu"} type={"password"}></Input>
+                    <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} onPressEnter={handleOk} placeholder={"Mật khẩu"} type={"password"}/>
+                )}
+            </FormItem>
+
+            <FormItem>
+                {getFieldDecorator('remember', {
+                    valuePropName: 'checked',
+                    initialValue: true
+                }) (
+                    <Checkbox>Ghi nhớ đăng nhập</Checkbox>
                 )}
             </FormItem>
 
